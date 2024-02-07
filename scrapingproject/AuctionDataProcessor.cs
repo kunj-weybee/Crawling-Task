@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using HtmlAgilityPack;
 using System.Text.RegularExpressions;
 using System.Configuration;
+using System.Runtime.Remoting.Contexts;
 
 namespace Crawling
 {
@@ -160,16 +161,27 @@ namespace Crawling
          */
         private static string FormatLocation(string location)                                // Timed Auction, Zürich
         {
-            int indexOfAuctionPipe = location.IndexOf("Auction |", StringComparison.OrdinalIgnoreCase);
-            int indexOfAuctionComma = location.IndexOf("Auction,", StringComparison.OrdinalIgnoreCase);
+            /* or
+                int indexOfAuctionPipe = location.IndexOf("Auction |", StringComparison.OrdinalIgnoreCase);
+                int indexOfAuctionComma = location.IndexOf("Auction,", StringComparison.OrdinalIgnoreCase);
 
-            if (indexOfAuctionPipe != -1)
+                if (indexOfAuctionPipe != -1)
+                {
+                    return location.Substring(indexOfAuctionPipe + "Auction |".Length).Trim();
+                }
+                else if (indexOfAuctionComma != -1)
+                {
+                    return location.Substring(indexOfAuctionComma + "Auction,".Length).Trim();  // indexOfAuctionComma = 6 , "Auction,".Length = 8  ( 6 + 8 = 14 ) it will start substring from index 14 till last.
+                }
+
+                return location; 
+             */
+
+            Match match = Regex.Match(location, @"(?<=Auction(\,| \|)\s+)(?<Location>.*)");
+
+            if (match.Success)
             {
-                return location.Substring(indexOfAuctionPipe + "Auction |".Length).Trim();
-            }
-            else if (indexOfAuctionComma != -1)
-            {
-                return location.Substring(indexOfAuctionComma + "Auction,".Length).Trim();  // indexOfAuctionComma = 6 , "Auction,".Length = 8  ( 6 + 8 = 14 ) it will start substring from index 14 till last.
+                return match.Groups["Location"].Value;
             }
 
             return location;
