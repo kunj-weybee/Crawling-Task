@@ -1,0 +1,46 @@
+ # Extract location = 
+
+ 			Hotel President Wilson, Geneva 	- Live Auction |  Hotel President Wilson, Geneva
+  			Geneva 				- Live Auction, Geneva
+  			Zürich 				- Timed Auction, Zürich
+
+
+			-> extracting text based on word "Auction |" or "Auction,".
+			-> if non of them found i am conidering as whole location
+
+
+
+
+ # Extract lot from string = 
+
+  			437 <- View 437 lot		
+
+ 			-> numeric text only
+
+# Extract Date = 
+
+		   	start date , end date , start month , end month , start year , end year
+
+	
+dates give in format =
+			
+		~ 9-22 DECEMBER 16:00 CET
+
+		~ 9 DEC, 14:00 (CET)
+		~ Take a look at auction results & hammer prices for the recently sold timepieces from our auction that never ends
+		
+		~ (21 OCT, 15:00 CET 31 OCT, 15:00 CET)	
+			21 OCT, 15:00 CET
+		  	31 OCT, 15:00 CET 
+
+		~ 17 JULY - 30 JULY 2023
+
+		~ 15 - 29 APR 2023
+
+		~ 21 MAR 2023 - 4 APR 2023
+
+		~ 29 OCT 2022, 14:00 (CET)
+
+		~ 16 November, 2019
+
+

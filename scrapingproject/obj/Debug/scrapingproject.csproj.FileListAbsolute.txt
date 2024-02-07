@@ -1,0 +1,13 @@
+C:\Users\DELL\source\repos\scrapingproject\scrapingproject\bin\Debug\scrapingproject.exe.config
+C:\Users\DELL\source\repos\scrapingproject\scrapingproject\bin\Debug\scrapingproject.exe
+C:\Users\DELL\source\repos\scrapingproject\scrapingproject\bin\Debug\scrapingproject.pdb
+C:\Users\DELL\source\repos\scrapingproject\scrapingproject\bin\Debug\HtmlAgilityPack.dll
+C:\Users\DELL\source\repos\scrapingproject\scrapingproject\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\DELL\source\repos\scrapingproject\scrapingproject\bin\Debug\HtmlAgilityPack.xml
+C:\Users\DELL\source\repos\scrapingproject\scrapingproject\obj\Debug\scrapingproject.csproj.AssemblyReference.cache
+C:\Users\DELL\source\repos\scrapingproject\scrapingproject\obj\Debug\scrapingproject.csproj.CoreCompileInputs.cache
+C:\Users\DELL\source\repos\scrapingproject\scrapingproject\obj\Debug\scrapingproject.csproj.CopyComplete
+C:\Users\DELL\source\repos\scrapingproject\scrapingproject\obj\Debug\scrapingproject.exe
+C:\Users\DELL\source\repos\scrapingproject\scrapingproject\obj\Debug\scrapingproject.pdb
+C:\Users\DELL\source\repos\scrapingproject\scrapingproject\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\DELL\source\repos\scrapingproject\scrapingproject\bin\Debug\System.Configuration.ConfigurationManager.xml
