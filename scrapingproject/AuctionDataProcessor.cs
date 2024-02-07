@@ -12,17 +12,17 @@ namespace Crawling
 {
     internal class AuctionDataProcessor
     {
-        public async Task<List<AuctionData>> ExtractAuctionDataAsync(string url)
+        public async Task<List<AuctionData>> ExtractAuctionDataAsync(string url)                // it will return result of type List<AuctionData>
         {
             List<AuctionData> auctionDataList = new List<AuctionData>();
 
             try
             {
-                using (HttpClient client = new HttpClient())
+                using (HttpClient client = new HttpClient())                        // HttpClient class is used for making HTTP requests
                 {
-                    string htmlContent = await client.GetStringAsync(url);
-                    HtmlDocument doc = new HtmlDocument();
-                    doc.LoadHtml(htmlContent);
+                    string htmlContent = await client.GetStringAsync(url);                      // it is an asynchronous method that sends an HTTP GET request to the specified URL (url) and asynchronously retrieves the content of the response as a string
+                    HtmlDocument doc = new HtmlDocument();                          // HtmlDocument is a class provided by the HtmlAgilityPack library
+                    doc.LoadHtml(htmlContent);                                  //  loads the HTML content obtained from the web page into doc
 
                     var titles = doc.DocumentNode.SelectNodes("//*[@class='auction-item__name']")
                         ?.Select(node => node.InnerText.Trim()) ?? Enumerable.Empty<string>();
