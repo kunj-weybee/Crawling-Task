@@ -11,8 +11,8 @@ namespace Crawling
         {
             string url = "https://ineichen.com/auctions/past/";
 
-            AuctionDataProcessor auctionDataProcessor = new AuctionDataProcessor();
-            List<AuctionData> auctionDataList = await auctionDataProcessor.ExtractAuctionDataAsync(url);
+            AuctionDataProcessor auctionDataProcessor = new AuctionDataProcessor();                         // creating object of class : AuctionDataProcessor
+            List<AuctionData> auctionDataList = await auctionDataProcessor.ExtractAuctionDataAsync(url);    // data is stored in list named auctionDataList
 
             if (auctionDataList == null)
             {
@@ -20,7 +20,7 @@ namespace Crawling
                 return;
             }
 
-            auctionDataProcessor.InsertAuctionDataIntoDatabase(auctionDataList);
+            auctionDataProcessor.InsertAuctionDataIntoDatabase(auctionDataList);                            // data stored in list named auctionDataList is insertd into database
 
             Console.WriteLine("Successfully Crawled "+ auctionDataList.Count + " item.");
             Console.ReadLine();
