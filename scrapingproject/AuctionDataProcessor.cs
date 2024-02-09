@@ -8,6 +8,7 @@ using HtmlAgilityPack;
 using System.Text.RegularExpressions;
 using System.Configuration;
 using System.Runtime.Remoting.Contexts;
+using System.Data;
 
 namespace Crawling
 {
@@ -105,11 +106,13 @@ namespace Crawling
                 {
                     foreach (var data in auctionDataList)
                     {
-                        string insertQuery = "INSERT INTO Auctions (Title, Description, ImageUrl, Link, LotCount, StartDate, StartMonth, StartYear, StartTime, EndDate, EndMonth, EndYear, EndTime, Location) " +
-                                             "VALUES (@Title, @Description, @ImageUrl, @Link, @LotCount, @StartDate, @StartMonth, @StartYear , @StartTime , @EndDate, @EndMonth, @EndYear, @EndTime , @Location)";
+                        // stored procedure
+                        string insertQuery = "SP_InsertAuctionData";                    
 
                         using (SqlCommand command = new SqlCommand(insertQuery, connection))
                         {
+                            command.CommandType = CommandType.StoredProcedure;
+
                             command.Parameters.AddWithValue("@Title", data.Title);
                             command.Parameters.AddWithValue("@Description", data.Description);
                             command.Parameters.AddWithValue("@ImageUrl", data.ImageUrl);
@@ -135,6 +138,7 @@ namespace Crawling
                 }
             }
         }
+
 
 
 
